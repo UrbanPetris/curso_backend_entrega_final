@@ -1,0 +1,21 @@
+[2022-09-07T14:59:05.077] [ERROR] devError - Error obteniendo página de inicio Error: Cannot find module 'html'
+Require stack:
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\node_modules\express\lib\view.js
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\node_modules\express\lib\application.js
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\node_modules\express\lib\express.js
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\node_modules\express\index.js
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\server.js
+[2022-09-07T15:12:32.062] [ERROR] devError - Error obteniendo productos Error: Cannot find module 'html'
+Require stack:
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\node_modules\express\lib\view.js
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\node_modules\express\lib\application.js
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\node_modules\express\lib\express.js
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\node_modules\express\index.js
+- C:\Users\pdepetris\Desktop\Personal\Coderhouse\Backend\terceraentrega\server.js
+[2022-09-07T15:27:07.554] [ERROR] devError - Error redirigiendo: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2022-09-07T15:45:43.796] [ERROR] devError - Error redirigiendo: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2022-09-07T15:48:42.024] [ERROR] devError - Error redirigiendo: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2022-09-07T15:49:30.467] [ERROR] devError - Error redirigiendo: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2022-09-07T15:49:51.077] [ERROR] devError - Error redirigiendo: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2022-09-07T15:52:36.025] [ERROR] devError - Error en el proceso de autenticación TypeError: Users.find3One is not a function
+[2022-09-07T15:55:30.340] [ERROR] devError - Error en el proceso de registro TypeError: Users.find3One is not a function

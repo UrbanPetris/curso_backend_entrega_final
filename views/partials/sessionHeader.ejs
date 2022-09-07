@@ -1,0 +1,7 @@
+<div class="d-flex align-items-center justify-content-between">
+    <h1 class="text-primary">Bienvenido <%= data.firstname %> <img style="max-width: 70px" class="img-thumbnail" src="data:image/<%=data.avatar.contentType%>;base64,
+            <%=data.avatar.data.toString('base64')%>">
+    </h1>
+    <a class="btn btn-primary" href="/carrito/<%= data.id %>/productos" role="button"><i class="bi-cart"></i></a>
+    <a class="btn btn-danger" href="/logout" role="button">Desloguearse</a>
+</div>

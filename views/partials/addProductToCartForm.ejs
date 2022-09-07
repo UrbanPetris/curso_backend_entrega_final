@@ -1,0 +1,24 @@
+<div class="d-flex align-items-center justify-content-between">
+    <div>
+        <h1 class="text-danger">Detalle de Producto</h1>
+    </div>
+    <div>
+        <a class="btn btn-info" href="/" role="button">Volver a Productos</a>
+    </div>
+</div>
+<div><%=data.producto.name %></div>
+<img style="max-width: 300px" src="<%=data.producto.photourl %>">
+<div><%=data.producto.description %></div>
+<div><%=`$${data.producto.price}`%></div>
+<div><%=data.producto.code %></div>
+<br>
+<form action="/carrito/<%= data.id %>/productos" method="post">
+    <input type="hidden" name="id" value="<%=data.producto.id %>"> <!-- mando oculto por body el id del producto -->
+    <div class="form-group">
+        <label>Cantidad</label>
+        <input type="number" min="1" step="1"
+            oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')" class="form-control"
+            name="quantity" required>
+    </div>
+    <input type="submit" class="btn btn-success" value="Agregar producto">
+</form>
