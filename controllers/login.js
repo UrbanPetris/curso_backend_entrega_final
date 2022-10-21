@@ -3,7 +3,7 @@ const { log, logerror } = require("../lib/logger");
 const getLoginPage = (req, res) => {
   try {
     log.info(`${req.method} en ${req.originalUrl}`);
-    res.status(200).render("pages/login.ejs", { puerto: process.argv[2] });
+    res.status(200).render("pages/login.ejs");
   } catch (err) {
     log.error(`Error obteniendo página de logueo ${err}`);
     logerror.error(`Error obteniendo página de logueo ${err}`);

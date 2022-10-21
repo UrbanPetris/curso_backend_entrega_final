@@ -10,8 +10,6 @@ global.adminPhoneNumber = admin.phoneNumber;
 const express = require("express");
 const app = express();
 
-const PORT = server.port;
-
 const passport = require("passport");
 
 app.use(session(sessionSettings));
@@ -26,7 +24,9 @@ require("./routes/index")(app); //routing
 app.set("views", "./views");
 app.set("view engine", "ejs");
 
-app.listen(PORT, async () => {
-  console.log(`Server running on port ${PORT} - ProcessId: ${process.pid}`);
+app.listen(server.port, async () => {
+  console.log(
+    `Server running on port ${server.port} - ProcessId: ${process.pid}`
+  );
   await mongoose.connect(db.url_mongo);
 });
