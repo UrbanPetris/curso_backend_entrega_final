@@ -12,7 +12,7 @@ const getSignUpPage = (req, res) => {
 };
 
 const makeSignUp = (req, res) => {
-  res.redirect("/");
+  res.redirect("/productos");
 };
 
 module.exports = {

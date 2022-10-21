@@ -19,3 +19,38 @@ Require stack:
 [2022-09-07T15:49:51.077] [ERROR] devError - Error redirigiendo: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
 [2022-09-07T15:52:36.025] [ERROR] devError - Error en el proceso de autenticación TypeError: Users.find3One is not a function
 [2022-09-07T15:55:30.340] [ERROR] devError - Error en el proceso de registro TypeError: Users.find3One is not a function
+[2022-10-19T11:29:20.030] [ERROR] devError - Error:  RestException [Error]: Twilio could not find a Channel with the specified From address
+    at success (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 400,
+  code: 63007,
+  moreInfo: 'https://www.twilio.com/docs/errors/63007',
+  details: undefined
+}
+[2022-10-20T12:38:52.539] [ERROR] devError - Error:  RestException [Error]: Twilio could not find a Channel with the specified From address
+    at success (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\twilio\lib\base\Version.js:135:15)
+    at Promise_then_fulfilled (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\q\q.js:766:44)
+    at Promise_done_fulfilled (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\q\q.js:835:31)
+    at Fulfilled_dispatch [as dispatch] (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\q\q.js:1229:9)
+    at Pending_become_eachMessage_task (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\q\q.js:1369:30)
+    at RawTask.call (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\asap\asap.js:40:19)
+    at flush (C:\Users\pdepetris\Desktop\Personal\Coderhouse\Entrega Final Backend\node_modules\asap\raw.js:50:29)
+    at processTicksAndRejections (node:internal/process/task_queues:78:11) {
+  status: 400,
+  code: 63007,
+  moreInfo: 'https://www.twilio.com/docs/errors/63007',
+  details: undefined
+}
+[2022-10-20T14:17:14.785] [ERROR] devError - Error buscando producto ReferenceError: Carrito is not defined
+[2022-10-20T14:17:55.606] [ERROR] devError - Error buscando producto TypeError: Cannot read properties of undefined (reading '_id')
+[2022-10-20T14:24:49.021] [ERROR] devError - Error agregando producto ValidationError: price: Path `price` is required., photourl: Path `photourl` is required., category: Path `category` is required., description: Path `description` is required., name: Path `name` is required.
+[2022-10-20T14:25:43.802] [ERROR] devError - Error agregando producto ValidationError: price: Path `price` is required., photourl: Path `photourl` is required., category: Path `category` is required., description: Path `description` is required., name: Path `name` is required.
+[2022-10-20T14:25:45.196] [ERROR] devError - Error agregando producto ValidationError: price: Path `price` is required., photourl: Path `photourl` is required., category: Path `category` is required., description: Path `description` is required., name: Path `name` is required.
+[2022-10-20T14:26:36.464] [ERROR] devError - Error agregando producto TypeError: Cannot read properties of undefined (reading '_id')
+[2022-10-20T14:33:52.055] [ERROR] devError - Error agregando producto ValidationError: photourl: Path `photourl` is required., category: Path `category` is required., description: Path `description` is required., name: Path `name` is required.

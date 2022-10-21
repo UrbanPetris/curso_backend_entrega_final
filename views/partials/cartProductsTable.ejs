@@ -3,7 +3,7 @@
         <h1 class="text-danger"> Vista de carrito</h1>
     </div>
     <div>
-        <a class="btn btn-info" href="/" role="button">Volver a Productos</a>
+        <a class="btn btn-info" href="/productos" role="button">Volver a Productos</a>
     </div>
 </div>
 <% if ( data.productos.length === 0) { %>
@@ -13,6 +13,7 @@
     <tr class=" text-warning">
         <th>Nombre</th>
         <th>Precio</th>
+        <th>Category</th>
         <th>Imagen</th>
         <th>Cantidad</th>
         <th>Subtotal</th>
@@ -21,6 +22,7 @@
     <tr>
         <td class="align-middle"><%= producto.name %></td>
         <td class="align-middle"><%= `$${producto.price}`  %></td>
+        <td class="align-middle"><%= `${producto.category}`  %></td>
         <td class="align-middle"><img style="max-width: 48px" src="<%= producto.photourl %>" alt="<%= producto.name %>">
         <td class="align-middle"><%= producto.quantity %></td>
         <td class="align-middle"><%= `$${producto.quantity * producto.price}` %></td>
@@ -28,12 +30,11 @@
     <% }) %>
 </table>
 <div class="d-flex justify-content-between">
-    <div> Total: <%= `$${data.total}` %></div>
+    <div> Total: <%= `$${    data.productos.reduce((total, product) => {
+        return total + product.price * product.quantity;
+      }, 0)}` %></div>
     <!-- <button>Comprar</button> -->
     <form action="/checkout" method="post">
-        <input type="hidden" name="id" value=<%=data.id%>>
-        <input type="hidden" name="productos" value=<%=JSON.stringify(data.productos)%>>
-        <!-- mando oculto por body id y productos-->
         <input type="submit" class="btn btn-success" value="Comprar">
     </form>
 </div>

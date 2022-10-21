@@ -5,6 +5,7 @@ const {
   getProductById,
   updateProductById,
   deleteProductById,
+  getProductsByCategory,
 } = require("../controllers/productos");
 const { checkAuthentication } = require("../middlewares/checkAuthentication");
 
@@ -12,6 +13,10 @@ router
   .route("/")
   .get(checkAuthentication, getProducts)
   .post(checkAuthentication, addProduct);
+
+router
+  .route("/category/:category")
+  .get(checkAuthentication, getProductsByCategory);
 
 router
   .route("/:id")

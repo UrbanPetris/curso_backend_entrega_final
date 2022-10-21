@@ -17,8 +17,8 @@
             <input type="text" class="form-control" name="description" required>
         </div>
         <div class="form-group">
-            <label>Código de producto</label>
-            <input type="text" class="form-control" name="code" required>
+            <label>Categoría</label>
+            <input type="text" class="form-control" name="category" required>
         </div>
         <div class="form-group">
             <label>Precio</label>
@@ -27,12 +27,6 @@
         <div class="form-group">
             <label>Foto URL</label>
             <input type="text" class="form-control" name="photourl" required>
-        </div>
-        <div class="form-group">
-            <label>Stock</label>
-            <input type="number" min="1" step="1"
-                oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*)\./g, '$1')" class="form-control"
-                name="stock" required>
         </div>
         <input type="submit" class="btn btn-success">
     </form>

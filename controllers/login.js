@@ -13,7 +13,7 @@ const getLoginPage = (req, res) => {
 
 const makeLogin = (req, res) => {
   try {
-    res.redirect("/");
+    res.redirect("/productos");
   } catch (err) {
     log.error(`Error redirigiendo: ${err}`);
     logerror.error(`Error redirigiendo: ${err}`);

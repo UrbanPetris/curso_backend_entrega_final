@@ -1,29 +1,27 @@
 const router = require("express").Router();
 
 const {
-  addCarrito,
   getCarritos,
   deleteCarritoById,
   addProductToCartById,
-  getProductsInCartById,
+  getCartById,
   deleteProductInCartById,
 } = require("../controllers/carrito");
 const { checkAuthentication } = require("../middlewares/checkAuthentication");
 
 router.route("/").get(checkAuthentication, getCarritos);
-// .post(checkAuthentication, addCarrito);
-// el carrito se agregará automaticamente cuando se registra el usuario
+// no hay POST porque el carrito se agregará automaticamente cuando se registra el usuario
 
 // router.route("/:id").delete(checkAuthentication, deleteCarritoById);
 // no implementar por ahora
 
 router
-  .route("/:id/productos")
-  .get(checkAuthentication, getProductsInCartById)
+  .route("/productos")
+  .get(checkAuthentication, getCartById)
   .post(checkAuthentication, addProductToCartById);
 
 router
-  .route("/:id/productos/:id_prod")
+  .route("/productos/:id_prod")
   .delete(checkAuthentication, deleteProductInCartById);
 
 module.exports = router;

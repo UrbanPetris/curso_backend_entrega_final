@@ -113,3 +113,13 @@ function isValidPassword(user, password) {
 function createHash(password) {
   return bCrypt.hashSync(password, bCrypt.genSaltSync(10), null);
 }
+
+const authenticate = (authentication) => {
+  return passport.authenticate(authentication, {
+    failureRedirect: "/serveFailure",
+  });
+};
+
+module.exports = {
+  authenticate,
+};
