@@ -1,4 +1,4 @@
-const { sendEmailWithOrder, emailMessage } = require("../lib/email");
+const { sendEmail, emailMessageOrder } = require("../lib/email");
 const { sendMessage, wappMessage } = require("../lib/messagging");
 const { Carrito } = require("../models/carrito");
 const { Orden } = require("../models/ordenes");
@@ -38,9 +38,9 @@ const checkout = async (req, res) => {
           //   adminPhoneNumber,
           //   "wapp"
           // );
-          // await sendEmailWithOrder(
+          // await sendEmail(
           //   `Nuevo pedido de ${req.user.firstname} - ${req.user.email}`,
-          //   emailMessage(req.user, carrito.productos)
+          //   emailMessageOrder(req.user, carrito.productos)
           // );
           res.redirect("/productos");
         }

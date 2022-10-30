@@ -69,3 +69,9 @@ Require stack:
   details: undefined
 }
 [2022-10-21T16:00:14.542] [ERROR] devError - Error obteniendo página de inicio TypeError: res.status(...).rencder is not a function
+[2022-10-25T16:12:06.877] [ERROR] devError - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:44:09.018] [ERROR] devError - Error redirigiendo: Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+[2022-10-25T16:45:26.896] [ERROR] devError - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T17:06:13.667] [ERROR] devError - Error obteniendo página de inicio TypeError: res.status(...).rendser is not a function
+[2022-10-25T17:13:21.404] [ERROR] devError - Error obteniendo página de chat privado TypeError: res.status(...).rednder is not a function
+[2022-10-30T10:41:01.553] [ERROR] devError - Error in Saving user with cart: TypeError: Cannot read properties of undefined (reading 'firstname')

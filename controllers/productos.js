@@ -1,5 +1,5 @@
 const { Productos } = require("../models/productos");
-const { log, logerror } = require("../lib/logger");
+const { log, logerror, loguear } = require("../lib/logger");
 
 //CHEQUEADO TODO
 
@@ -10,14 +10,18 @@ const getProducts = async (req, res) => {
       data: {
         productos: productos,
         id: req.user._id,
+        email: req.user.email,
         firstname: req.user.firstname,
         avatar: req.user.avatar,
       },
     });
-    log.info(`${req.method} en ${req.originalUrl}`);
+    loguear(`${req.method} en ${req.originalUrl}`, "info");
+    // log.info(`${req.method} en ${req.originalUrl}`);
   } catch (err) {
-    log.error(`Error obteniendo productos ${err}`);
-    logerror.error(`Error obteniendo productos ${err}`);
+    loguear(`Error obteniendo productos ${err}`, "error");
+    loguear(`Error obteniendo productos ${err}`, "error", "devError");
+    // log.error(`Error obteniendo productos ${err}`);
+    // logerror.error(`Error obteniendo productos ${err}`);
     res.status(500).json({ message: err.message });
   }
 };
@@ -29,10 +33,13 @@ const addProduct = async (req, res) => {
   try {
     await product.save();
     res.status(201).json(product);
-    log.info(`${req.method} en ${req.originalUrl}`);
+    loguear(`${req.method} en ${req.originalUrl}`, "info");
+    // log.info(`${req.method} en ${req.originalUrl}`);
   } catch (err) {
-    log.error(`Error agregando producto ${err}`);
-    logerror.error(`Error agregando producto ${err}`);
+    loguear(`Error agregando producto ${err}`, "error");
+    loguear(`Error agregando producto ${err}`, "error", "devError");
+    // log.error(`Error agregando producto ${err}`);
+    // logerror.error(`Error agregando producto ${err}`);
     res.status(500).json({ message: err.message });
   }
 };
@@ -50,16 +57,21 @@ const getProductById = async (req, res) => {
           producto: producto,
         },
       });
-      log.info(`${req.method} en ${req.originalUrl}`);
+      loguear(`${req.method} en ${req.originalUrl}`, "info");
+      // log.info(`${req.method} en ${req.originalUrl}`);
     } else {
       res.status(404).json({ error: "Producto no encontrado" });
-      log.error(`Error por producto no encontrado ${err}`);
-      logerror.error(`Error por producto no encontrado ${err}`);
+      loguear(`Error por producto no encontrado ${err}`, "error");
+      loguear(`Error por producto no encontrado ${err}`, "error", "devError");
+      // log.error(`Error por producto no encontrado ${err}`);
+      // logerror.error(`Error por producto no encontrado ${err}`);
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
-    log.error(`Error buscando producto ${err}`);
-    logerror.error(`Error buscando producto ${err}`);
+    loguear(`Error buscando producto ${err}`, "error");
+    loguear(`Error buscando producto ${err}`, "error", "devError");
+    // log.error(`Error buscando producto ${err}`);
+    // logerror.error(`Error buscando producto ${err}`);
   }
 };
 
@@ -77,10 +89,13 @@ const getProductsByCategory = async (req, res) => {
         avatar: req.user.avatar,
       },
     });
-    log.info(`${req.method} en ${req.originalUrl}`);
+    loguear(`${req.method} en ${req.originalUrl}`, "info");
+    // log.info(`${req.method} en ${req.originalUrl}`);
   } catch (err) {
-    log.error(`Error obteniendo productos ${err}`);
-    logerror.error(`Error obteniendo productos ${err}`);
+    loguear(`Error obteniendo productos ${err}`, "error");
+    loguear(`Error obteniendo productos ${err}`, "error", "devError");
+    // log.error(`Error obteniendo productos ${err}`);
+    // logerror.error(`Error obteniendo productos ${err}`);
     res.status(500).json({ message: err.message });
   }
 };
@@ -93,16 +108,21 @@ const updateProductById = async (req, res) => {
 
     if (!producto) {
       res.status(404).json({ error: "Producto no encontrado" });
-      log.error(`Error por producto no encontrado ${err}`);
-      logerror.error(`Error por producto no encontrado ${err}`);
+      loguear(`Error por producto no encontrado ${err}`, "error");
+      loguear(`Error por producto no encontrado ${err}`, "error", "devError");
+      // log.error(`Error por producto no encontrado ${err}`);
+      // logerror.error(`Error por producto no encontrado ${err}`);
     } else {
       res.status(200).json({ message: "Producto actualizado" });
-      log.info(`${req.method} en ${req.originalUrl}`);
+      loguear(`${req.method} en ${req.originalUrl}`, "info");
+      // log.info(`${req.method} en ${req.originalUrl}`);
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
-    log.error(`Error buscando producto ${err}`);
-    logerror.error(`Error buscando producto ${err}`);
+    loguear(`Error buscando producto ${err}`, "error");
+    loguear(`Error buscando producto ${err}`, "error", "devError");
+    // log.error(`Error buscando producto ${err}`);
+    // logerror.error(`Error buscando producto ${err}`);
   }
 };
 
@@ -112,16 +132,25 @@ const deleteProductById = async (req, res) => {
 
     if (!producto) {
       res.status(404).json({ error: "Producto no encontrado" });
-      log.error(`Error por producto no encontrado ${err}`);
-      logerror.error(`Error por producto no encontrado ${err}`);
+      loguear(`Error por producto no encontrado ${err}`, "error");
+      loguear(`Error por producto no encontrado ${err}`, "error", "devError");
+      // log.error(`Error por producto no encontrado ${err}`);
+      // logerror.error(`Error por producto no encontrado ${err}`);
     } else {
       res.status(200).json({ message: "Producto eliminado" });
-      log.info(`${req.method} en ${req.originalUrl}`);
+      loguear(`${req.method} en ${req.originalUrl}`, "info");
+      // log.info(`${req.method} en ${req.originalUrl}`);
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
-    log.error(`Error buscando producto para eliminar ${err}`);
-    logerror.error(`Error buscando producto para eliminar ${err}`);
+    loguear(`Error buscando producto para eliminar ${err}`, "error");
+    loguear(
+      `Error buscando producto para eliminar ${err}`,
+      "error",
+      "devError"
+    );
+    // log.error(`Error buscando producto para eliminar ${err}`);
+    // logerror.error(`Error buscando producto para eliminar ${err}`);
   }
 };
 

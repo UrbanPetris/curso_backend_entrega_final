@@ -3,11 +3,11 @@
         <h1 class="text-danger">Detalle de Producto</h1>
     </div>
     <div>
-        <a class="btn btn-info" href="/" role="button">Volver a Productos</a>
+        <a class="btn btn-info" href="/productos" role="button">Volver a Productos</a>
     </div>
 </div>
 <div><%=data.producto.name %></div>
-<img style="max-width: 300px" src="<%=data.producto.photourl %>">
+<img style="max-width: 300px" src="/static/<%=data.producto.photourl %>">
 <div><%=data.producto.description %></div>
 <div><%=`$${data.producto.price}`%></div>
 <div><%=data.producto.category %></div>

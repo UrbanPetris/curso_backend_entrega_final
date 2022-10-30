@@ -1,0 +1,39 @@
+<script src="https://cdn.socket.io/4.5.0/socket.io.min.js"
+    integrity="sha384-7EyYLQZgWBi67fBtVxw60/OWl1kjsfrPFcaU0pp0nAh+i8FD068QogUvg85Ewy1k" crossorigin="anonymous">
+</script>
+<script>
+    const socket = io()
+    const emailInput = document.getElementById("email");
+    const messageInput = document.getElementById("mensaje");
+
+    document
+        .getElementById("sendMessageButton")
+        .addEventListener("submit", (event) => {
+            event.preventDefault();
+
+        });
+
+    document.getElementById("sendMessageButton").addEventListener("click", () => {
+        sendMessage();
+    });
+
+    function sendMessage() {
+
+        const today = new Date();
+        const date = `${today.getFullYear()}-${
+    today.getMonth() + 1
+  }-${today.getDate()}`;
+        const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+        const dateTime = `${date} ${time}`;
+
+        const message = {
+            email: emailInput.value,
+            message: messageInput.value,
+            date: dateTime,
+        };
+
+        socket.emit("incomingMessage", message);
+        messageInput.value = "";
+        messageInput.focus();
+    }
+</script>

@@ -1,0 +1,37 @@
+[2022-10-25T12:55:24.998] [ERROR] prod - Error agregando mensaje en historial de Chat ValidationError: message: Path `message` is required.
+[2022-10-25T13:01:20.698] [ERROR] prod - Error agregando mensaje en historial de Chat ValidationError: message: Path `message` is required.
+[2022-10-25T13:02:43.457] [ERROR] prod - Error agregando mensaje en historial de Chat ValidationError: message: Path `message` is required.
+[2022-10-25T14:49:14.164] [ERROR] prod - Error agregando mensaje en historial de Chat ValidationError: email: Cast to string failed for value "{}" (type Object) at path "email"
+[2022-10-25T14:49:18.340] [ERROR] prod - Error agregando mensaje en historial de Chat ValidationError: email: Cast to string failed for value "{}" (type Object) at path "email", message: Path `message` is required.
+[2022-10-25T15:53:18.511] [ERROR] prod - Error obteniendo página de inicio Error: Email no coincide
+[2022-10-25T15:54:33.665] [ERROR] prod - Error obteniendo página de inicio Error: Email no coincide
+[2022-10-25T15:57:59.537] [ERROR] prod - Error agregando mensaje en historial de Chat ValidationError: message: Path `message` is required.
+[2022-10-25T15:58:10.583] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T15:58:10.583] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T15:59:43.048] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T15:59:43.050] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:02:09.227] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:02:09.228] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:03:43.495] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'email')
+[2022-10-25T16:04:22.350] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:04:22.356] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:08:31.701] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:08:31.702] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:08:32.904] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:08:32.904] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:08:37.595] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:08:37.596] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:08:38.023] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:08:38.024] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:08:38.311] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:08:38.311] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:08:38.667] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:08:38.668] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:08:39.319] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:08:39.319] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:08:39.845] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:08:39.845] [ERROR] prod - Error obteniendo página de inicio TypeError: Cannot read properties of undefined (reading 'error')
+[2022-10-25T16:09:15.666] [ERROR] prod - Usuario pdepetrischauvin@gmail.com intentó entrar a un chat ajeno
+[2022-10-25T16:09:15.670] [ERROR] prod - Error obteniendo página de inicio
+[2022-10-30T08:41:08.042] [ERROR] prod - Error en el proceso de autenticación MongoServerError: cannot do raw queries on admin in atlas
+[2022-10-30T08:41:08.044] [ERROR] prod - Error en el proceso de autenticación MongoServerError: cannot do raw queries on admin in atlas

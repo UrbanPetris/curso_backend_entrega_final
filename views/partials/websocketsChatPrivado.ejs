@@ -1,0 +1,13 @@
+<script>
+    socket.on("chat", (messages) => {
+
+        let html = ''
+        messages.filter(message => {
+            return message.email === window.location.pathname.split("/").pop()
+        }).map(message => {
+            html +=
+                `<div>  <strong style="color: blue">${message.email}</strong>  <em style="color: brown">${new Date(message.date).toLocaleString()}</em>  <em style="color: green">${message.message}</em></div>`
+        })
+        document.getElementById("messages").innerHTML = html;
+    });
+</script>

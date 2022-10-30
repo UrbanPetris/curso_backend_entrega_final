@@ -7,7 +7,11 @@
         </div>
         <div class="form-group">
             <label>Password</label>
-            <input type="password" class="form-control" name="password">
+            <input type="password" class="form-control" name="password" onChange="onChange()">
+        </div>
+        <div class="form-group">
+            <label>Confirm Password</label>
+            <input type="password" class="form-control" name="confirm" onChange="onChange()">
         </div>
         <div class="form-group">
             <label>Nombre/s</label>
@@ -43,3 +47,14 @@
         <a href="/login" class="btn btn-primary">Back to Login</a>
     </div>
 </section>
+<script>
+    function onChange() {
+        const password = document.querySelector('input[name=password]');
+        const confirm = document.querySelector('input[name=confirm]');
+        if (confirm.value === password.value) {
+            confirm.setCustomValidity('');
+        } else {
+            confirm.setCustomValidity('Passwords do not match');
+        }
+    }
+</script>

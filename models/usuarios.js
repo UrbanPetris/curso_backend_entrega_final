@@ -9,10 +9,11 @@ const usuariosSchema = new mongoose.Schema({
   age: { type: Number, required: true },
   address: { type: String, required: true },
   phonenumber: { type: Number, required: true },
-  avatar: {
-    data: Buffer,
-    contentType: String,
-  },
+  // avatar: {
+  //   data: Buffer,
+  //   contentType: String,
+  // },
+  avatar: { type: String, required: true },
 });
 
 const Users = new mongoose.model(usuariosCollection, usuariosSchema);

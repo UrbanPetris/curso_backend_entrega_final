@@ -1,8 +1,11 @@
 <div class="d-flex align-items-center justify-content-between">
-    <h1 class="text-primary">Bienvenido <%= data.firstname %> <img style="max-width: 70px" class="img-thumbnail" src="data:image/<%=data.avatar.contentType%>;base64,
-            <%=data.avatar.data.toString('base64')%>">
-    </h1>
-    <!-- <a class="btn btn-primary" href="/carrito/<%= data.id %>/productos" role="button"><i class="bi-cart"></i></a> -->
-    <a class="btn btn-primary" href="/carrito/productos" role="button"><i class="bi-cart"></i></a>
-    <a class="btn btn-danger" href="/logout" role="button">Desloguearse</a>
+
+        <h1 class="text-primary">Bienvenido <%= data.firstname %> <img style="max-width: 70px" class="img-thumbnail"
+                        src="/static/avatars/<%= data.avatar%>"></h1>
+        <a class="btn btn-success" href="/chat" role="button" title="Ir a chat"><i class="bi-chat"></i></a>
+        <a class="btn btn-info" href="/chat/<%= data.email %>" role="button" title="Ir a chat propio"><i
+                        class="bi-chat-heart"></i></a>
+        <a class="btn btn-primary" href="/carrito/productos" role="button" title="Ver carrito"><i
+                        class="bi-cart"></i></a>
+        <a class="btn btn-danger" href="/logout" role="button" title="Desloguearse">Desloguearse</a>
 </div>

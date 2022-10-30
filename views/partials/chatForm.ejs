@@ -1,0 +1,20 @@
+<section>
+    <h1 class="text-center">Central de Mensajes</h1>
+
+    <div class="row">
+        <div class="col-md-12 border mb-3">
+            <div class="overflow-auto position-relative" style="height: 300px">
+                <div>
+                    <p class="small p-1 mb-1" style="word-wrap: break-all;" id="messages"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row pb-1" style="justify-content: space-between;">
+        <input type="text" id="email" disabled class="col-md-2 ml-1" value=<%= data.email %>>
+        <input type="text" id="mensaje" placeholder="Escriba su mensaje..." class="col-md-6">
+        <button id="sendMessageButton" type="submit" class="col-md-3 mr-1">Enviar</button>
+    </div>
+</section>

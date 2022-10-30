@@ -1,6 +1,7 @@
 module.exports = (app) => {
   app.use("/", require("./home"));
   app.use("/checkout", require("./checkout"));
+  app.use("/chat", require("./chat"));
   app.use("/productos", require("./productos"));
   app.use("/carrito", require("./carrito"));
   app.use("/logout", require("./logout"));

@@ -4,8 +4,8 @@ const bCrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 const fs = require("fs");
-const path = require("path");
-const { log, logerror } = require("../lib/logger");
+const { loguear } = require("../lib/logger");
+const { sendEmail, emailMessageSignUp } = require("../lib/email");
 
 passport.use(
   "login",
@@ -18,19 +18,23 @@ passport.use(
       try {
         const user = await Users.findOne({ email: email });
         if (!user) {
-          log.info(`User not found with email ${email}`);
+          loguear(`User not found with email ${email}`, "info");
           return next(null, false);
         }
         const validated = isValidPassword(user, password);
         if (!validated) {
-          log.info(`Invalid password for ${user.email}`);
+          loguear(`Invalid password for ${user.email}`, "info");
           next(null, false);
         }
 
         next(null, user);
       } catch (err) {
-        log.error(`Error en el proceso de autenticación ${err}`);
-        logerror.error(`Error en el proceso de autenticación ${err}`);
+        loguear(`Error en el proceso de autenticación ${err}`, "error");
+        loguear(
+          `Error en el proceso de autenticación ${err}`,
+          "error",
+          "devError"
+        );
         next(err, false);
       }
     }
@@ -49,7 +53,7 @@ passport.use(
         const user = await Users.findOne({ email: email });
 
         if (user) {
-          log.info(`User with email ${email} already exists`);
+          loguear(`User with email ${email} already exists`, "info");
           return next(null, false);
         }
 
@@ -61,12 +65,7 @@ passport.use(
           age: req.body.age,
           address: req.body.address,
           phonenumber: req.body.countryCode + req.body.phonenumber,
-          avatar: {
-            data: fs.readFileSync(
-              path.join(appRoot + "/public/avatars/" + req.file.filename)
-            ),
-            contentType: "image/png",
-          },
+          avatar: req.file.filename,
         };
 
         try {
@@ -77,15 +76,27 @@ passport.use(
             modifiedOn: new Date(),
           });
           await nuevoCarrito.save();
-          log.info(`User with email ${email} registered succesfully with cart`);
+          loguear(
+            `User with email ${email} registered succesfully with cart`,
+            "info"
+          );
+          await sendEmail(
+            `Usuario registrado`,
+            emailMessageSignUp(userCreated)
+          );
           return next(null, userCreated);
         } catch (err) {
-          console.log("Error in Saving user with cart: " + err); //sacar console.log
+          loguear(`Error in Saving user with cart: ${err}`, "error");
+          loguear(
+            `Error in Saving user with cart: ${err}`,
+            "error",
+            "devError"
+          );
           return next(err);
         }
       } catch (err) {
-        log.error(`Error en el proceso de registro ${err}`);
-        logerror.error(`Error en el proceso de registro ${err}`);
+        loguear(`Error en el proceso de registro ${err}`, "error");
+        loguear(`Error en el proceso de registro ${err}`, "error", "devError");
         return next(err, false);
       }
     }
@@ -101,7 +112,8 @@ passport.deserializeUser(async (email, next) => {
     let user = await Users.findOne({ email: email });
     next(null, user);
   } catch (err) {
-    console.log("Error in getting user: " + err); //sacar console.log
+    loguear(`Error in getting user: ${err}`, "error");
+    loguear(`Error in getting user: ${err}`, "error", "devError");
     return next(err);
   }
 });
