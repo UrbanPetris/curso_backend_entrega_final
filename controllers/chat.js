@@ -1,4 +1,4 @@
-const { log, logerror, loguear } = require("../lib/logger");
+const { loguear } = require("../lib/logger");
 
 const getChat = (req, res) => {
   try {
@@ -11,12 +11,9 @@ const getChat = (req, res) => {
       },
     });
     loguear(`${req.method} en ${req.originalUrl}`, "info");
-    // log.info(`${req.method} en ${req.originalUrl}`);
   } catch (err) {
     loguear(`Error obteniendo página de chat ${err}`, "error");
     loguear(`Error obteniendo página de chat ${err}`, "error", "devError");
-    // log.error(`Error obteniendo página de inicio ${err}`);
-    // logerror.error(`Error obteniendo página de inicio ${err}`);
     res.status(500).json({ message: err.message });
   }
 };
@@ -33,7 +30,6 @@ const getChatByEmail = (req, res) => {
         },
       });
       loguear(`${req.method} en ${req.originalUrl}`, "info");
-      // log.info(`${req.method} en ${req.originalUrl}`);
     } else {
       res
         .status(402)
@@ -47,10 +43,6 @@ const getChatByEmail = (req, res) => {
         "error",
         "devError"
       );
-      // log.error(`Usuario ${req.user.email} intentó entrar a un chat ajeno`);
-      // logerror.error(
-      //   `Usuario ${req.user.email} intentó entrar a un chat ajeno`
-      // );
     }
   } catch (err) {
     loguear(`Error obteniendo página de chat privado ${err}`, "error");
@@ -59,8 +51,6 @@ const getChatByEmail = (req, res) => {
       "error",
       "devError"
     );
-    // log.error(`Error obteniendo página de inicio ${err}`);
-    // logerror.error(`Error obteniendo página de inicio ${err}`);
     res.status(500).json({ message: err.message });
   }
 };

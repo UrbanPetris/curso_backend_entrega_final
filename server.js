@@ -1,5 +1,5 @@
 require("dotenv").config();
-require("./middlewares/auth"); //lo necesita passport para inicializar
+require("./middlewares/auth");
 const path = require("path");
 const { sessionSettings, server, db, admin } = require("./lib/config");
 const { getHistoricalChat, updateChat } = require("./lib/websockets");

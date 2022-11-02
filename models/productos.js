@@ -7,7 +7,6 @@ const productosSchema = new mongoose.Schema({
   category: { type: String, required: true },
   photourl: { type: String, required: true },
   price: { type: Number, required: true },
-  //agregar propiedades...
 });
 
 const Productos = new mongoose.model(productosCollection, productosSchema);

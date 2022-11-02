@@ -2,8 +2,6 @@ const { Carrito } = require("../models/carrito");
 const { Productos } = require("../models/productos");
 let ObjectId = require("mongoose").Types.ObjectId;
 
-//CHEQUEADO TODO
-
 //addCarrito: no hay porque el carrito se crea automáticamente con el usuario y tienen el mismo id
 
 const getCarritos = async (req, res) => {

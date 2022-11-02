@@ -1,6 +1,6 @@
 require("yargs/yargs");
 const numCpus = require("os").cpus().length;
-const { log, logerror, loguear } = require("../lib/logger");
+const { loguear } = require("../lib/logger");
 
 const info = {
   "Argumentos de entrada": process.argv.slice(2),
@@ -17,12 +17,9 @@ const getInfo = (req, res) => {
   try {
     res.status(200).json(info);
     loguear(`${req.method} en ${req.originalUrl}`, "info");
-    // log.info(`${req.method} en ${req.originalUrl}`);
   } catch (err) {
     loguear(`Error obteniendo info ${err}`, "error");
     loguear(`Error obteniendo info ${err}`, "error", "devError");
-    // log.error(`Error obteniendo info ${err}`);
-    // logerror.error(`Error obteniendo info ${err}`);
     res.status(500).send("error");
   }
 };
