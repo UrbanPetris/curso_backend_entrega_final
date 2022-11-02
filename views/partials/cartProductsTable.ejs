@@ -23,7 +23,8 @@
         <td class="align-middle"><%= producto.name %></td>
         <td class="align-middle"><%= `$${producto.price}`  %></td>
         <td class="align-middle"><%= `${producto.category}`  %></td>
-        <td class="align-middle"><img style="max-width: 48px" src="<%= producto.photourl %>" alt="<%= producto.name %>">
+        <td class="align-middle"><img style="max-width: 48px" src="/static/<%= producto.photourl %>"
+                alt="<%= producto.name %>">
         <td class="align-middle"><%= producto.quantity %></td>
         <td class="align-middle"><%= `$${producto.quantity * producto.price}` %></td>
     </tr>

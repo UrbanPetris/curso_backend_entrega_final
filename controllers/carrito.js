@@ -1,5 +1,6 @@
 const { Carrito } = require("../models/carrito");
 const { Productos } = require("../models/productos");
+const { loguear } = require("../lib/logger");
 let ObjectId = require("mongoose").Types.ObjectId;
 
 //addCarrito: no hay porque el carrito se crea automáticamente con el usuario y tienen el mismo id
@@ -8,13 +9,17 @@ const getCarritos = async (req, res) => {
   let carritos = await Carrito.find({});
   try {
     res.status(200).json(carritos);
+    loguear(`${req.method} en ${req.originalUrl}`, "info");
   } catch (err) {
+    loguear(`Error obteniendo carritos ${err}`, "error");
+    loguear(`Error obteniendo carritos ${err}`, "error", "devError");
     res.status(500).json({ message: err.message });
   }
 };
 
 const getCartById = async (req, res) => {
   try {
+    loguear(`${req.method} en ${req.originalUrl}`, "info");
     const carrito = await Carrito.findById(req.user._id);
     if (carrito) {
       res.status(200).render("pages/cartProducts.ejs", {
@@ -30,11 +35,14 @@ const getCartById = async (req, res) => {
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
+    loguear(`Error buscando carrito ${err}`, "error");
+    loguear(`Error buscando carrito ${err}`, "error", "devError");
   }
 };
 
 const deleteCarritoById = async (req, res) => {
   try {
+    loguear(`${req.method} en ${req.originalUrl}`, "info");
     const carrito = await Carrito.findByIdAndDelete({ _id: req.params.id });
     if (!carrito) {
       res.status(404).json({ error: "Carrito no encontrado" });
@@ -43,6 +51,8 @@ const deleteCarritoById = async (req, res) => {
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
+    loguear(`Error buscando carrito ${err}`, "error");
+    loguear(`Error buscando carrito ${err}`, "error", "devError");
   }
 };
 
@@ -50,6 +60,7 @@ const addProductToCartById = async (req, res) => {
   //vendría a ser un updateCartById
 
   try {
+    loguear(`${req.method} en ${req.originalUrl}`, "info");
     const quantityToBuy = parseInt(req.body.quantity);
     const producto = await Productos.findById(req.body.id);
 
@@ -74,7 +85,6 @@ const addProductToCartById = async (req, res) => {
 
         if (!carrito) {
           res.status(404).json({ error: "Carrito no encontrado" });
-        } else {
           res.redirect("/carrito/productos");
         }
       } else {
@@ -101,12 +111,15 @@ const addProductToCartById = async (req, res) => {
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
+    loguear(`Error buscando producto ${err}`, "error");
+    loguear(`Error buscando producto ${err}`, "error", "devError");
   }
 };
 
 const deleteProductInCartById = async (req, res) => {
   //vendría a ser un updateCartById
   try {
+    loguear(`${req.method} en ${req.originalUrl}`, "info");
     const carrito = await Carrito.findByIdAndUpdate(
       req.user._id,
       {
@@ -123,6 +136,8 @@ const deleteProductInCartById = async (req, res) => {
     }
   } catch (err) {
     res.status(500).json({ message: err.message });
+    loguear(`Error buscando carrito ${err}`, "error");
+    loguear(`Error buscando carrito ${err}`, "error", "devError");
   }
 };
 
